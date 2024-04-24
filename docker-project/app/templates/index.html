@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Hotels Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Soft grey background */
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #343a40; /* Dark grey navigation background */
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically align items */
+        }
+        nav li {
+            margin: 0;
+        }
+        nav a {
+            display: block;
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #495057; /* Darker grey on hover */
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #343a40; /* Dark grey heading color */
+        }
+        .dropdown {
+            margin-right: 20px;
+        }
+        .dropdown select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ced4da; /* Grey border */
+            background-color: #fff; /* White background */
+            color: #495057; /* Dark grey text color */
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .dropdown select:hover {
+            border-color: #80bdff; /* Light blue border on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Docker Hotels Hub</h1>
+    <nav>
+        <ul>
+            <li><a href="http://127.0.0.1:5000/table/hotels">Hotels</a></li>
+            <li><a href="http://127.0.0.1:5000/rate/">Hotels Rating</a></li>
+            <li><a href="http://127.0.0.1:5000/table/rooms">Rooms</a></li>
+            <li><a href="http://127.0.0.1:5000/table/guests">Guests</a></li>
+            <li><a href="http://127.0.0.1:5000/table/reservations">Reservations</a></li>
+            <li><a href="http://127.0.0.1:5000/table/employees">Employees</a></li>
+            <li><a href="http://127.0.0.1:5000/join_tables">Join tables Hotels & Rooms</a></li>
+            <!-- <li><a href="http://127.0.0.1:5000/filter/hotels_by_city/Varna">Hotels in Varna</a></li>
+            <li><a href="http://127.0.0.1:5000/filter/hotels_by_city/Sofia">Hotels in Sofia</a></li>
+            <li><a href="http://127.0.0.1:5000/filter/hotels_by_city/Veliko%20Tarnovo">Hotels in Veliko Tarnovo</a></li> -->
+            <li>
+                <div class="dropdown">
+                    <select onchange="location.href = this.value;">
+                        <option value="#" disabled selected>Select City</option>
+                        <option value="http://127.0.0.1:5000/filter/hotels_by_city/Varna">Varna</option>
+                        <option value="http://127.0.0.1:5000/filter/hotels_by_city/Sofia">Sofia</option>
+                        <option value="http://127.0.0.1:5000/filter/hotels_by_city/Veliko%20Tarnovo">Veliko Tarnovo</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

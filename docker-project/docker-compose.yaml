@@ -1,0 +1,24 @@
+services:
+  flask-app:
+    build: ./app/
+    command: sh -c "python3 ./app.py"
+    ports:
+      - '5000:5000'
+    networks:
+      - db-mysql-network
+    depends_on:
+      - db
+
+  db:
+    build: ./db/
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    networks:
+      - db-mysql-network
+
+networks:
+  db-mysql-network:
